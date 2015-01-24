@@ -1,9 +1,9 @@
-package com.qulix.test;
+package com.qulix.test.XMLParsing;
 
-import com.qulix.test.XMLTags.Block;
-import com.qulix.test.XMLTags.Elem;
-import com.qulix.test.XMLTags.Param;
-import com.qulix.test.XMLTags.SubTest;
+import com.qulix.test.XMLParsing.XMLTags.Block;
+import com.qulix.test.XMLParsing.XMLTags.Elem;
+import com.qulix.test.XMLParsing.XMLTags.Param;
+import com.qulix.test.XMLParsing.XMLTags.SubTest;
 import org.w3c.dom.Element;
 
 import java.util.ArrayList;

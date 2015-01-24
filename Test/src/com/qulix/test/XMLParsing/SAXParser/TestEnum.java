@@ -1,4 +1,4 @@
-package com.qulix.test.SAXParser;
+package com.qulix.test.XMLParsing.SAXParser;
 
 public enum TestEnum {
     TESTS ("tests"),

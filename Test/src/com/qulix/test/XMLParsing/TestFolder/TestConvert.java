@@ -1,6 +1,6 @@
-package com.qulix.test.TestFolder;
+package com.qulix.test.XMLParsing.TestFolder;
 
-import com.qulix.test.Analyzer_DOM;
+import com.qulix.test.XMLParsing.Analyzer_DOM;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class TestConvert {
 
-    public final static String                  PATH                        = "D:\\!IdeaProjects\\Test\\src\\com\\qulix\\test\\data\\Test.xml";
+    public final static String                  PATH                        = "D:\\!IdeaProjects\\Test\\src\\com\\qulix\\test\\XMLParsing\\data\\Test.xml";
     private static final DocumentBuilderFactory DOCUMENT_BUILDER_FACTORY    = DocumentBuilderFactory.newInstance();
     private static final String                 TEXT_MESSAGE                = "Starting creation of a XML file";
 

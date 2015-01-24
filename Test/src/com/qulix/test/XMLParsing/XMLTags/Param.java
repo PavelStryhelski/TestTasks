@@ -1,4 +1,4 @@
-package com.qulix.test.XMLTags;
+package com.qulix.test.XMLParsing.XMLTags;
 
 public class Param{
 

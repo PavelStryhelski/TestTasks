@@ -1,15 +1,15 @@
-package com.qulix.test.TestFolder;
+package com.qulix.test.XMLParsing.TestFolder;
 
 
-import com.qulix.test.XMLTags.Block;
-import com.qulix.test.XMLTags.Elem;
-import com.qulix.test.XMLTags.Param;
-import com.qulix.test.XMLTags.SubTest;
+import com.qulix.test.XMLParsing.XMLTags.Block;
+import com.qulix.test.XMLParsing.XMLTags.Elem;
+import com.qulix.test.XMLParsing.XMLTags.Param;
+import com.qulix.test.XMLParsing.XMLTags.SubTest;
 import org.apache.commons.lang3.StringUtils;
 import org.jdom2.Document;
-import org.jdom2.output.EscapeStrategy;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
+
 import java.util.ArrayList;
 
 
