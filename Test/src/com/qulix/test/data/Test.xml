@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+	<test name="WITHOUT_OVERLAP">
+		<blocks>
+			<block name="1">
+				<elements>
+					<element name="switch_app">
+						<param name="app_type" value="APP"/>
+						<param name="db_link" value="TO_SLAVE"/>
+						<param name="default_path" value="/usr/app.exe"/>
+						<param name="main_win_title" value=".*APP.*"/>
+						<param name="main_win_is_regexp" value="1"/>
+						<param name="name_owner" value="OWNER"/>
+						<param name="name_server" value="SERVER"/>
+						<param name="app_proc" value="app.exe"/>
+						<param name="sync" value="120"/>
+						<param name="name_user" value="USER"/>
+						<param name="password" value="PWD"/>
+						<param name="user_password" value="PWD"/>
+					</element>
+					<element name = "save_res_from_view">
+						<param name = "view" value = "VW_CRIT_AT_SEARCH_EX_1"/>
+						<param name = "class" value = "RES_BASE_ACCS"/>
+					</element>
+					<element name = "set_var_from_view">
+						<param name = "view" value = "VW_CRIT_DATE_OP_CALC"/>
+						<param name = "var_name" value = "v_op_date"/>
+					</element>
+					<element name = "run_arm">
+					</element>
+					<element name = "open_type">
+						<param name = "cls_id" value = "RES_BASE_ACCS"/>
+					</element>
+					<element name = "select_ekz_id">
+						<param name = "view" value = "Полный список"/>
+						<param name = "clss" value = "RES_BASE_ACCS"/>
+						<param name = "num" value = "1"/>
+					</element>
+					<element name = "open_oper_f4">
+						<param name = "cls_id" value = "RES_BASE_ACCS"/>
+						<param name = "oper_id" value = "SYNCH_GR_RIS"/>
+						<param name = "obj_ref" value = "1"/>
+					</element>
+					<element name = "fill_date">
+						<param name = "field" value = "Дата"/>
+						<param name = "value" value = "$var$V_OP_DATE"/>
+					</element>
+					<element name = "fill_check_box">
+						<param name = "field" value = "Синхронизировать по группе риска клиента"/>
+						<param name = "value" value = "1"/>
+					</element>
+					<element name = "fill_check_box">
+						<param name = "field" value = "Синхронизировать по резервированию"/>
+						<param name = "value" value = "1"/>
+					</element>
+					<element name = "press_button">
+						<param name = "name" value = "OK"/>
+					</element>
+					<element name = "close_arm">
+					</element>
+				</elements>
+			</block>
+		</blocks>
+	</test>
+	<test name="WITH_OVERLAP">
+		<blocks>
+			<block name="1">
+				<elements>
+					<element name="switch_app">
+						<param name="app_type" value="APP"/>
+						<param name="default_path" value="/usr/app.exe"/>
+						<param name="main_win_title" value=".*APP.*"/>
+						<param name="main_win_is_regexp" value="1"/>
+						<param name="name_owner" value="OWNER2"/>
+						<param name="name_server" value="SERVER"/>
+						<param name="app_proc" value="app.exe"/>
+						<param name="sync" value="120"/>
+						<param name="name_user" value="USER"/>
+						<param name="password" value="PWD"/>
+					</element>
+					<element name = "run_arm">
+					</element>
+					<element name = "open_type">
+						<param name = "cls_id" value = "RES_BASE_ACCS"/>
+					</element>
+					<element name = "open_oper_f4">
+						<param name = "cls_id" value = "RES_BASE_ACCS"/>
+						<param name = "oper_id" value = "SYNCH_GR_RIS"/>
+						<param name = "obj_ref" value = "1"/>
+					</element>
+					<element name = "fill_check_box">
+						<param name = "field" value = "Синхронизировать по группе риска клиента"/>
+						<param name = "value" value = "1"/>
+					</element>
+					<element name = "press_button">
+						<param name = "name" value = "OK"/>
+					</element>
+					<element name = "close_arm">
+					</element>
+				</elements>
+			</block>
+			<block name="2">
+				<elements>
+					<element name = "run_arm">
+					</element>
+					<element name = "open_type">
+						<param name = "cls_id" value = "RES_BASE_ACCS"/>
+					</element>
+					<element name = "press_button">
+						<param name = "name" value = "OK"/>
+					</element>
+					<element name = "close_arm">
+					</element>
+				</elements>
+			</block>
+		</blocks>
+	</test>
+</root>
