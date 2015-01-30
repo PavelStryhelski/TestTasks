@@ -1,10 +1,14 @@
 package com.qulix.test.XMLParsing.SAXParser;
 
+import com.qulix.test.XMLParsing.XMLTags.Tests;
 import com.qulix.test.XMLParsing.XMLTags.Block;
 import com.qulix.test.XMLParsing.XMLTags.Elem;
 import com.qulix.test.XMLParsing.XMLTags.SubTest;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import java.util.ArrayList;
 
 public class SAX_Test {
@@ -41,4 +45,23 @@ public class SAX_Test {
             System.out.println("Test " + st + " ended");
         }
     }
+
+    public void serialize(){
+
+        Tests tests = new Tests();
+        tests.setSubTests(subtests);
+
+        try {
+            JAXBContext context =
+                    JAXBContext.newInstance(Tests.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+            m.marshal(tests, System.out);
+        } catch (JAXBException e) {
+            System.out.println("JAXB-исключения");
+            e.printStackTrace();
+        }
+    }
+
+
 }
