@@ -9,6 +9,9 @@ import org.apache.commons.lang3.StringUtils;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class SAX_Test {
@@ -46,22 +49,27 @@ public class SAX_Test {
         }
     }
 
-    public void serialize(){
+    public void serialize() throws IOException {
 
         Tests tests = new Tests();
         tests.setSubTests(subtests);
+        OutputStream outputStream = new BufferedOutputStream(System.out);
 
         try {
             JAXBContext context =
                     JAXBContext.newInstance(Tests.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-            m.marshal(tests, System.out);
+            m.setProperty(Marshaller.JAXB_FRAGMENT, true);
+            m.setProperty("com.sun.xml.bind.xmlHeaders", "<?xml version=\"1.0\" encoding=\"windows-1251\"?>");
+            m.marshal(tests, outputStream);
         } catch (JAXBException e) {
             System.out.println("JAXB-исключения");
             e.printStackTrace();
         }
+        finally {
+            outputStream.close();
+        }
     }
-
 
 }

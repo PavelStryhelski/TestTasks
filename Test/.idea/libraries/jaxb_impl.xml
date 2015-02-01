@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jaxb-impl">
+    <CLASSES>
+      <root url="jar://D:/IDEs/jaxb-ri-2.2.7/lib/jaxb-impl.jar!/" />
+      <root url="jar://D:/IDEs/jaxb-ri-2.2.7/lib/jaxb-api.jar!/" />
+      <root url="jar://D:/IDEs/jaxb-ri-2.2.7/lib/jaxb-xjc.jar!/" />
+      <root url="jar://D:/IDEs/jaxb-ri-2.2.7/lib/jaxb-core.jar!/" />
+      <root url="jar://D:/IDEs/jaxb-ri-2.2.7/lib/jaxb-jxc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

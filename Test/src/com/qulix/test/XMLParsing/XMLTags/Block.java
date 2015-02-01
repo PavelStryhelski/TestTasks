@@ -1,5 +1,8 @@
 package com.qulix.test.XMLParsing.XMLTags;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import java.util.ArrayList;
 
 public class Block
@@ -12,15 +15,17 @@ public class Block
         this.subTest = owner;
     }
 
-
     public String getName() {
         return name;
     }
 
+    @XmlAttribute(name = "name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @XmlElementWrapper(name ="elements")
+    @XmlElement(name = "element")
     public ArrayList<Elem> getElemCollection() {
         return elems;
     }

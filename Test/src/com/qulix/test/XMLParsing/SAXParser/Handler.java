@@ -38,17 +38,17 @@ public class Handler extends DefaultHandler{
             test.setName(attrs.getValue(0));
         }
 
-        if (qName.equals("block")){
+        else if (qName.equals("block")){
             block = new Block(test);
             block.setName(attrs.getValue(0));
         }
 
-        if (qName.equals("element")){
+        else if (qName.equals("element")){
             elem = new Elem(block);
             elem.setName(attrs.getValue(0));
         }
 
-        if (qName.equals("param")){
+        else if (qName.equals("param")){
 
             param = new Param(elem);
             param.setName(attrs.getValue(0));
@@ -67,15 +67,15 @@ public class Handler extends DefaultHandler{
             subTests.add(test);
         }
 
-        if (qName.equals("block")){
+        else if (qName.equals("block")){
             test.addBlock(block);
         }
 
-        if (qName.equals("element")){
+        else if (qName.equals("element")){
             block.addElement(elem);
         }
 
-        if (qName.equals("param")){
+        else if (qName.equals("param")){
             elem.addParam(param);
         }
 

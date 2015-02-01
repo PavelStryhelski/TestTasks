@@ -1,5 +1,7 @@
 package com.qulix.test.XMLParsing.XMLTags;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 
 public class Elem
@@ -16,10 +18,12 @@ public class Elem
         return name;
     }
 
+    @XmlAttribute(name  = "name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @XmlElement(name = "param")
     public ArrayList<Param> getParamCollection() {
         return params;
     }
